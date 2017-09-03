@@ -1,4 +1,4 @@
-ar nconf = require('nconf')
+var nconf = require('nconf')
 var request = require("request")
 
 // load config
