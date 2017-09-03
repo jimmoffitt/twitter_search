@@ -5,11 +5,16 @@ var request = require("request")
 nconf.file({ file: 'config.json' }).env()
 
 // twitter authentication
+#consumer_key = process.env.CONSUMER_KEY
+#consumer_secret = process.env.CONSUMER_SECRET
+#token = process.env.ACCESS_TOKEN
+#token_secret = process.env.ACCESS_TOKEN_SECRE
+
 var twitter_oauth = {
-  consumer_key: nconf.get('TWITTER_CONSUMER_KEY'),
-  consumer_secret: nconf.get('TWITTER_CONSUMER_SECRET'),
-  token: nconf.get('TWITTER_ACCESS_TOKEN'),
-  token_secret: nconf.get('TWITTER_ACCESS_TOKEN_SECRET')
+  consumer_key: nconf.get('CONSUMER_KEY'),
+  consumer_secret: nconf.get('CONSUMER_SECRET'),
+  token: nconf.get('ACCESS_TOKEN'),
+  token_secret: nconf.get('ACCESS_TOKEN_SECRET')
 }
 
 // build request
