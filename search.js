@@ -8,7 +8,7 @@ nconf.file({ file: 'config.json' }).env()
 #consumer_key = process.env.CONSUMER_KEY
 #consumer_secret = process.env.CONSUMER_SECRET
 #token = process.env.ACCESS_TOKEN
-#token_secret = process.env.ACCESS_TOKEN_SECRE
+#token_secret = process.env.ACCESS_TOKEN_SECRET
 
 var twitter_oauth = {
   consumer_key: nconf.get('CONSUMER_KEY'),
