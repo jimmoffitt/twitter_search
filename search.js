@@ -1,3 +1,6 @@
+//@@domain_main
+//@@product
+
 var request = require("request")
 
 var twitter_oauth = {
@@ -14,7 +17,7 @@ var request = {
 
 // request options
 var request_options = {
-  url: 'https://developers.twitter.com/search',
+  url: @@domain_name/@@product, //api endpoint
   oauth: twitter_oauth,
   json: true,
   headers: {
