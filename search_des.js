@@ -1,12 +1,21 @@
 var request = require("request")
 
-var twitter_oauth = {
+var des_auth = {
   user_name: process.env.USER_NAME,
-  password: process.env.PASSWORD,
-  product: process.env.PRODUCT #FAS, 30Day  --> 30day, fullarchive
-  account_name: process.env.ACCOUNT_NAME,
-  stream_name: process.env.STREAM_NAME
+  password: process.env.PASSWORD
 }
+
+var des_config = {
+  product: process.env.PRODUCT, //FAS, 30Day  --> 30day, fullarchive
+  account_name: process.env.ACCOUNT_NAME,
+  stream_name: process.env.STREAM_NAME,
+ }
+
+//var des_config = {
+//  product: process.env.PRODUCT, //FAS, 30Day  --> 30day, fullarchive
+//  account_name: process.env.ACCOUNT_NAME,
+//  stream_name: process.env.STREAM_NAME,
+// }
 
 // build request
 var request = {
@@ -19,8 +28,8 @@ var request = {
 
 // request options
 var request_options = {
-  url: 'https://gnip-api.twitter.com/search/30day/accounts/jim/prod.json',
-  oauth: twitter_oauth,
+  url: 'https://gnip-api.twitter.com/search/' + des_config['product'] + '/accounts/' + des_config['account_name'] + '/' + des_config['stream_name'] + '.json',
+  auth: des_auth,
   json: true,
   headers: {
     'content-type': 'application/json'
