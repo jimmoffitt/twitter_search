@@ -6,20 +6,14 @@ var des_auth = {
 }
 
 var des_config = {
-  product: process.env.PRODUCT, //FAS, 30Day  --> 30day, fullarchive
+  product: process.env.PRODUCT, //30day, fullarchive
   account_name: process.env.ACCOUNT_NAME,
   stream_name: process.env.STREAM_NAME,
  }
 
-//var des_config = {
-//  product: process.env.PRODUCT, //FAS, 30Day  --> 30day, fullarchive
-//  account_name: process.env.ACCOUNT_NAME,
-//  stream_name: process.env.STREAM_NAME,
-// }
-
 // build request
-var request = {
-  "query": "(rain OR snow) profile_region:CO"
+var query = {
+  "query": "(rain OR snow) profile_region:Colorado"
 }
 
 //https://gnip-api.twitter.com/search/<PRODUCT>/accounts/<ACCOUNT_NAME>/<STREAM_NAME>.json
@@ -28,18 +22,17 @@ var request = {
 
 // request options
 var request_options = {
-  url: 'https://gnip-api.twitter.com/search/' + des_config['product'] + '/accounts/' + des_config['account_name'] + '/' + des_config['stream_name'] + '.json',
-  auth: des_auth,
+  url: 'https://' + des_auth['user_name'] + ":" + des_auth['password'] + '@gnip-api.twitter.com/search/' + des_config['product'] + '/accounts/' + des_config['account_name'] + '/' + des_config['stream_name'] + '.json',
   json: true,
   headers: {
     'content-type': 'application/json'
   },
-  body: request
+  body: query
 }
 
 // POST request
 request.post(request_options, function (error, response, body) {
-  
+
   if (error) {
     console.log('Error making search request.')
     console.log(error)
