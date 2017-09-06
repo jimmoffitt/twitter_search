@@ -16,7 +16,7 @@ var search_config = {
 
 // build request <-- input
 var query = {
-  "query": "(rain OR snow) profile_region:Colorado"
+  "query": "snow"
 }
 
 //@@domain_main
@@ -24,13 +24,17 @@ var query = {
 
 // request options
 var request_options = {
-  url: 'https://' + search_config['url'] + search_config['env'] + '.json', 
+  //POST form with "body: query" below
+  //url: 'https://' + search_config['url'] + search_config['env'] + '.json', 
+  //GET form with query included in URL.
+  url: 'https://' + search_config['url'] + search_config['env'] + '.json?query=' + query['query'], 
+  
   oauth: search_auth,
   json: true,
   headers: {
     'content-type': 'application/json'
   },
-  body: query
+  //body: query
 }
 
 // POST request
