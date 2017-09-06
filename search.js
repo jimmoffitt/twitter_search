@@ -27,6 +27,7 @@ var query = {
 // request options
 var request_options = {
   url: process.env.TWITTER_SEARCH_URL, //[]TODO: update details, api endpoint oauth: search_oauth,
+  oauth: search_auth,
   json: true,
   headers: {
     'content-type': 'application/json'
