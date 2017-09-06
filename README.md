@@ -22,6 +22,7 @@ Currently these scripts import authentication metadata from *environmental varia
 
 These scripts load authentication details and settings from *environmental variables*. So, set the following variables to get started: 
 
+```
 #Twitter Search 
 TWITTER_SEARCH_URL='' 
 CONSUMER_KEY=''
@@ -36,4 +37,4 @@ ACCOUNT_NAME=''
 STREAM_NAME=''
 USER_NAME=''
 PASSWORD=''
-
+```
