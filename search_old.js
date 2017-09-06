@@ -17,7 +17,7 @@ var request_options = {
   }
 }
 
-// POST request
+// GET request
 request(request_options, function (error, response, body) {
   
   if (error) {
