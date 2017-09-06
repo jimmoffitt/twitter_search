@@ -1,29 +1,34 @@
-//@@domain_main
-//@@product
-
 var request = require("request")
 
-var twitter_oauth = {
+var search_auth = {
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
   token: process.env.ACCESS_TOKEN,
   token_secret: process.env.ACCESS_TOKEN_SECRET
 }
 
-// build request
-var request = {
-  "query": "(rain OR snow) profile_region:CO"
+var search_config = {
+  product: process.env.PRODUCT, //recent, 30day, fullarchive
+  account_name: process.env.ACCOUNT_NAME,
+  stream_name: process.env.STREAM_NAME,
+ }
+
+// build request --> input 
+var query = {
+  "query": "(rain OR snow) profile_region:Colorado"
 }
+
+//@@domain_main
+//@@product
 
 // request options
 var request_options = {
-  url: @@domain_name/@@product, //api endpoint
-  oauth: twitter_oauth,
+  url: @@domain_name/@@product, //api endpoint oauth: search_oauth,
   json: true,
   headers: {
     'content-type': 'application/json'
   },
-  body: request
+  body: query
 }
 
 // POST request
@@ -37,4 +42,3 @@ request.post(request_options, function (error, response, body) {
 
   console.log(body);
 })
-
