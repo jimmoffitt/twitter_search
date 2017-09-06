@@ -1,5 +1,6 @@
 var request = require("request")
 
+//Twitter OAuth 1.0 
 var search_auth = {
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
@@ -7,13 +8,15 @@ var search_auth = {
   token_secret: process.env.ACCESS_TOKEN_SECRET
 }
 
+//Product details
 var search_config = {
+  URL: process.env.TWITTER_SEARCH_URL,
   product: process.env.PRODUCT, //recent, 30day, fullarchive
   account_name: process.env.ACCOUNT_NAME,
   stream_name: process.env.STREAM_NAME,
  }
 
-// build request --> input 
+// build request
 var query = {
   "query": "(rain OR snow) profile_region:Colorado"
 }
@@ -23,7 +26,7 @@ var query = {
 
 // request options
 var request_options = {
-  url: @@domain_name/@@product, //api endpoint oauth: search_oauth,
+  url: process.env.TWITTER_SEARCH_URL, //[]TODO: update details, api endpoint oauth: search_oauth,
   json: true,
   headers: {
     'content-type': 'application/json'
