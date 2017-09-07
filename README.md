@@ -1,4 +1,4 @@
-# twitter_search
+# Twitter Search scripts
 
 Simple Node scripts for Twitter Search. 
 
@@ -17,9 +17,9 @@ Currently these scripts import authentication metadata from *environmental varia
 
 ### Environment variables
 
-These scripts load authentication details and settings from *environment variables*. So, set the following variables to get started: 
+These scripts load authentication details and settings from *environment variables*. 
 
-If you are using the *search.js* script, which uses OAuth, the following variables need to be set:
+The *search.js* uses POST requests, and *search_get.js* using GET requests. If you are using these scripts, which use OAuth, the following variables need to be set:
 
 ```
 #Twitter Search 
