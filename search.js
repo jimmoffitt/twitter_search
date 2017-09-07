@@ -18,30 +18,25 @@ var search_config = {
 
 // build request <-- input
 var query = {
-  "query": "%28snow%20OR%20rain%29%20has%3Amedia"
+  "query": "(snow OR rain) has:media"
 }
 
 // request options
 var request_options = {
   //POST form with "body: query" below
-  //url: 'https://' + search_config['url'] + search_config['env'] + '.json',
-  //GET form with query included in URL.
-  url: 'https://' + search_config['url'] + search_config['env'] + '.json?query=' + query['query'],
+  url: 'https://' + search_config['url'] + search_config['env'] + '.json',
 
   oauth: search_auth,
   json: true,
   headers: {
     'content-type': 'application/json'
   },
-  //body: query //Uncomment with POST requests.
+  body: query 
 }
 
 // POST request
-//request.post(request_options, function (error, response, body) {
-//GET request
-request(request_options, function (error, response, body) {
-
-  console.log(request_options['url'])
+request.post(request_options, function (error, response, body) {
+  //console.log(request_options['url'])
 
   if (error) {
     console.log('Error making search request.')
