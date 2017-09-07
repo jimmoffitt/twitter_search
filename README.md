@@ -2,9 +2,9 @@
 
 Simple Node scripts for Twitter Search. 
 
-*User story: “As a developer wanting to exercise a Twitter Search API, I want an example script that I can quickly configure and start making API request, and see the raw output.”*
+*User story: “As a developer wanting to exercise a Twitter Search API, I need an example script that I can quickly configure and start making API requests, and see the raw JSON output.”*
 
-These Node scripts are used to start making Search API requests. These examples are scripts that can be easily configured and quickly ran to collect data. Using Node.js, these are intended to illustrate the fundamentals of writing API client code. 
+These Node scripts can be used to start making Search API requests. These scripts can be easily configured and quickly ran to collect data. Using Node.js, these are intended to illustrate the fundamentals of writing API client code. 
 
 In theory, these could provide the bedrock to start building on. However, these do not do any logging, there is no real error handling, and you may not want to use *environmental variables* as the configuration mechanism.
 
