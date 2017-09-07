@@ -17,16 +17,23 @@ Currently these scripts import authentication metadata from *environmental varia
 
 ### Environment variables
 
-These scripts load authentication details and settings from *environmental variables*. So, set the following variables to get started: 
+These scripts load authentication details and settings from *environment variables*. So, set the following variables to get started: 
+
+If you are using the *search.js* script, which uses OAuth, the following variables need to be set:
 
 ```
 #Twitter Search 
 TWITTER_SEARCH_URL='' 
+ENV=''
 CONSUMER_KEY=''
 CONSUMER_SECRET=''
 ACCESS_TOKEN=''
 ACCESS_TOKEN_SECRET=''
+```
 
+If you are using the *search_des.js* script for the Enterprise Search product, the following variables need to be set:
+
+```
 #DES
 DES_SEARCH_URL=''
 PRODUCT=''
