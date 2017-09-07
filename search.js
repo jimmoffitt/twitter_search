@@ -1,3 +1,5 @@
+//Demonstrates making a POST request to Twitter Search.
+
 var request = require("request")
 
 //Twitter OAuth
