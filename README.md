@@ -11,15 +11,17 @@ In theory, these could provide the bedrock to start building on. However, these 
 So likely the next steps are for the user to implement logging, configuration management, error handling, and data management.
 
 ## Getting started. 
-The first step is making sure you have all the neccessary keys and tokens to authenticate with the Twitter API. 
+The first step is making sure you have all the neccessary keys and tokens to authenticate with the Twitter API. See https://apps.twitter.com if you need keys.
 
 Currently these scripts import authentication metadata from *environmental variables*. 
 
+The *search.js* uses POST requests, and *search_get.js* using GET requests. 
+
 ### Environment variables
 
-These scripts load authentication details and settings from *environment variables*. 
+These scripts load authentication details and settings from *environment variables*. Cloud platforms and most IDEs provide configuration support for this (e.g. Heroku and Glitch), and when running in a terminal these can be set up in a script.
 
-The *search.js* uses POST requests, and *search_get.js* using GET requests. If you are using these scripts, which use OAuth, the following variables need to be set:
+If you are using these scripts, which use OAuth, the following variables need to be set:
 
 ```
 #Twitter Search 
@@ -31,7 +33,7 @@ ACCESS_TOKEN=''
 ACCESS_TOKEN_SECRET=''
 ```
 
-If you are using the *search_des.js* script for the Enterprise Search product, the following variables need to be set:
+If you are using the *search_des.js* script for the Enterprise Search product, the variables below need to be set. Enterprise APIs currently use Basic authentication:
 
 ```
 #DES
