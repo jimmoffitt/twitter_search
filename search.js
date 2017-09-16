@@ -1,4 +1,7 @@
 //Demonstrates making a POST request to Twitter Search.
+//A headless script that makes a single request, and does not paginate with API supplied tokens.
+//Has hardcoded serach query. A more useful script would have this passed in ;)
+//Write API response to console (system out).
 
 var request = require("request")
 
