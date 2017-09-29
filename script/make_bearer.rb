@@ -1,18 +1,13 @@
 # Generate and use an oauth2 bearer token for the Twitter API in Ruby
 #
-# For Application-Only authentication to the twitter API, a 'bearer token'
-# is required to authenticate against their endpoints for rate limiting
-# purposes.
+# For Application-Only authentication to the Twitter API, a 'bearer token'
+# can be used to authenticate with many endpoints.
 # 
-# This script generates a bearer token by posting to twitter and then it
-# uses that token to poll their API.
-#
 # Note, the base 64 encoded consumer credentials for the bearer token needs
 # to be stripped of newlines in order for this to work.
 #
 # The <consumer_key> and <consumer_secret> can be found by administering
-# a twitter app at:
-# http://apps.twitter.com
+# a Twitter app at: http://apps.twitter.com
 #
 # For documentation on how to generate this bearer token, refer: 
 # https://dev.twitter.com/oauth/reference/post/oauth2/token
