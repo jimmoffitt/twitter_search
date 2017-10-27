@@ -5,12 +5,12 @@
 
 var request = require("request")
 
-//Twitter OAuth
+//Twitter OAuth --- Application only, user context not required. 
 var search_auth = {
   consumer_key: process.env.CONSUMER_KEY,
-  consumer_secret: process.env.CONSUMER_SECRET,
-  token: process.env.ACCESS_TOKEN,
-  token_secret: process.env.ACCESS_TOKEN_SECRET
+  consumer_secret: process.env.CONSUMER_SECRET
+  //token: process.env.ACCESS_TOKEN,
+  //token_secret: process.env.ACCESS_TOKEN_SECRET
 }
 
 //Product details
